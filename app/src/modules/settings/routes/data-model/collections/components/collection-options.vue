@@ -43,7 +43,7 @@
 		<v-dialog v-model="deleteActive" @esc="deleteActive = null">
 			<v-card>
 				<v-card-title>
-					{{ collection.schema ? t('delete_collection_are_you_sure') : t('delete_folder_are_you_sure') }}
+					{{ collection.schema ? t('delete_collection_are_you_sure', {collection.collection}) : t('delete_folder_are_you_sure', {folder:folder.folder}) }}
 				</v-card-title>
 				<v-card-actions>
 					<v-button :disabled="deleting" secondary @click="deleteActive = null">
